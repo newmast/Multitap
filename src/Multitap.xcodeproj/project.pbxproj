@@ -1,0 +1,542 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		334777971C60EB51007B2894 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 334777961C60EB51007B2894 /* main.m */; };
+		3347779A1C60EB51007B2894 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 334777991C60EB51007B2894 /* AppDelegate.m */; };
+		3347779D1C60EB51007B2894 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3347779C1C60EB51007B2894 /* MenuViewController.m */; };
+		334777A01C60EB52007B2894 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3347779E1C60EB52007B2894 /* Main.storyboard */; };
+		334777A21C60EB52007B2894 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 334777A11C60EB52007B2894 /* Assets.xcassets */; };
+		334777A51C60EB52007B2894 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 334777A31C60EB52007B2894 /* LaunchScreen.storyboard */; };
+		334777B01C60EB52007B2894 /* MultitapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 334777AF1C60EB52007B2894 /* MultitapTests.m */; };
+		334777BB1C60EB52007B2894 /* MultitapUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 334777BA1C60EB52007B2894 /* MultitapUITests.m */; };
+		3374400A1C615B0000798FFA /* FallingBlocksView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 337440091C615B0000798FFA /* FallingBlocksView.xib */; };
+		3374400D1C615B5800798FFA /* FallingBlocksView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3374400C1C615B5800798FFA /* FallingBlocksView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		334777AC1C60EB52007B2894 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3347778A1C60EB51007B2894 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 334777911C60EB51007B2894;
+			remoteInfo = Multitap;
+		};
+		334777B71C60EB52007B2894 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3347778A1C60EB51007B2894 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 334777911C60EB51007B2894;
+			remoteInfo = Multitap;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		334777921C60EB51007B2894 /* Multitap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Multitap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		334777961C60EB51007B2894 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		334777981C60EB51007B2894 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		334777991C60EB51007B2894 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3347779B1C60EB51007B2894 /* MenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		3347779C1C60EB51007B2894 /* MenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		3347779F1C60EB52007B2894 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		334777A11C60EB52007B2894 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		334777A41C60EB52007B2894 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		334777A61C60EB52007B2894 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		334777AB1C60EB52007B2894 /* MultitapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultitapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		334777AF1C60EB52007B2894 /* MultitapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultitapTests.m; sourceTree = "<group>"; };
+		334777B11C60EB52007B2894 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		334777B61C60EB52007B2894 /* MultitapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultitapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		334777BA1C60EB52007B2894 /* MultitapUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultitapUITests.m; sourceTree = "<group>"; };
+		334777BC1C60EB52007B2894 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		337440091C615B0000798FFA /* FallingBlocksView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FallingBlocksView.xib; sourceTree = "<group>"; };
+		3374400B1C615B5800798FFA /* FallingBlocksView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FallingBlocksView.h; sourceTree = "<group>"; };
+		3374400C1C615B5800798FFA /* FallingBlocksView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FallingBlocksView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3347778F1C60EB51007B2894 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		334777A81C60EB52007B2894 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		334777B31C60EB52007B2894 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		334777891C60EB51007B2894 = {
+			isa = PBXGroup;
+			children = (
+				334777941C60EB51007B2894 /* Multitap */,
+				334777AE1C60EB52007B2894 /* MultitapTests */,
+				334777B91C60EB52007B2894 /* MultitapUITests */,
+				334777931C60EB51007B2894 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		334777931C60EB51007B2894 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				334777921C60EB51007B2894 /* Multitap.app */,
+				334777AB1C60EB52007B2894 /* MultitapTests.xctest */,
+				334777B61C60EB52007B2894 /* MultitapUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		334777941C60EB51007B2894 /* Multitap */ = {
+			isa = PBXGroup;
+			children = (
+				33743FFF1C613C1900798FFA /* Views */,
+				334777981C60EB51007B2894 /* AppDelegate.h */,
+				334777991C60EB51007B2894 /* AppDelegate.m */,
+				3347779B1C60EB51007B2894 /* MenuViewController.h */,
+				3347779C1C60EB51007B2894 /* MenuViewController.m */,
+				3347779E1C60EB52007B2894 /* Main.storyboard */,
+				334777A11C60EB52007B2894 /* Assets.xcassets */,
+				334777A31C60EB52007B2894 /* LaunchScreen.storyboard */,
+				334777A61C60EB52007B2894 /* Info.plist */,
+				334777951C60EB51007B2894 /* Supporting Files */,
+			);
+			path = Multitap;
+			sourceTree = "<group>";
+		};
+		334777951C60EB51007B2894 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				334777961C60EB51007B2894 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		334777AE1C60EB52007B2894 /* MultitapTests */ = {
+			isa = PBXGroup;
+			children = (
+				334777AF1C60EB52007B2894 /* MultitapTests.m */,
+				334777B11C60EB52007B2894 /* Info.plist */,
+			);
+			path = MultitapTests;
+			sourceTree = "<group>";
+		};
+		334777B91C60EB52007B2894 /* MultitapUITests */ = {
+			isa = PBXGroup;
+			children = (
+				334777BA1C60EB52007B2894 /* MultitapUITests.m */,
+				334777BC1C60EB52007B2894 /* Info.plist */,
+			);
+			path = MultitapUITests;
+			sourceTree = "<group>";
+		};
+		33743FFF1C613C1900798FFA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				337440091C615B0000798FFA /* FallingBlocksView.xib */,
+				3374400B1C615B5800798FFA /* FallingBlocksView.h */,
+				3374400C1C615B5800798FFA /* FallingBlocksView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		334777911C60EB51007B2894 /* Multitap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 334777BF1C60EB52007B2894 /* Build configuration list for PBXNativeTarget "Multitap" */;
+			buildPhases = (
+				3347778E1C60EB51007B2894 /* Sources */,
+				3347778F1C60EB51007B2894 /* Frameworks */,
+				334777901C60EB51007B2894 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Multitap;
+			productName = Multitap;
+			productReference = 334777921C60EB51007B2894 /* Multitap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		334777AA1C60EB52007B2894 /* MultitapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 334777C21C60EB52007B2894 /* Build configuration list for PBXNativeTarget "MultitapTests" */;
+			buildPhases = (
+				334777A71C60EB52007B2894 /* Sources */,
+				334777A81C60EB52007B2894 /* Frameworks */,
+				334777A91C60EB52007B2894 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				334777AD1C60EB52007B2894 /* PBXTargetDependency */,
+			);
+			name = MultitapTests;
+			productName = MultitapTests;
+			productReference = 334777AB1C60EB52007B2894 /* MultitapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		334777B51C60EB52007B2894 /* MultitapUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 334777C51C60EB52007B2894 /* Build configuration list for PBXNativeTarget "MultitapUITests" */;
+			buildPhases = (
+				334777B21C60EB52007B2894 /* Sources */,
+				334777B31C60EB52007B2894 /* Frameworks */,
+				334777B41C60EB52007B2894 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				334777B81C60EB52007B2894 /* PBXTargetDependency */,
+			);
+			name = MultitapUITests;
+			productName = MultitapUITests;
+			productReference = 334777B61C60EB52007B2894 /* MultitapUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3347778A1C60EB51007B2894 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Nick;
+				TargetAttributes = {
+					334777911C60EB51007B2894 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					334777AA1C60EB52007B2894 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 334777911C60EB51007B2894;
+					};
+					334777B51C60EB52007B2894 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 334777911C60EB51007B2894;
+					};
+				};
+			};
+			buildConfigurationList = 3347778D1C60EB51007B2894 /* Build configuration list for PBXProject "Multitap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 334777891C60EB51007B2894;
+			productRefGroup = 334777931C60EB51007B2894 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				334777911C60EB51007B2894 /* Multitap */,
+				334777AA1C60EB52007B2894 /* MultitapTests */,
+				334777B51C60EB52007B2894 /* MultitapUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		334777901C60EB51007B2894 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3374400A1C615B0000798FFA /* FallingBlocksView.xib in Resources */,
+				334777A51C60EB52007B2894 /* LaunchScreen.storyboard in Resources */,
+				334777A21C60EB52007B2894 /* Assets.xcassets in Resources */,
+				334777A01C60EB52007B2894 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		334777A91C60EB52007B2894 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		334777B41C60EB52007B2894 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3347778E1C60EB51007B2894 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3374400D1C615B5800798FFA /* FallingBlocksView.m in Sources */,
+				3347779D1C60EB51007B2894 /* MenuViewController.m in Sources */,
+				3347779A1C60EB51007B2894 /* AppDelegate.m in Sources */,
+				334777971C60EB51007B2894 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		334777A71C60EB52007B2894 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				334777B01C60EB52007B2894 /* MultitapTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		334777B21C60EB52007B2894 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				334777BB1C60EB52007B2894 /* MultitapUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		334777AD1C60EB52007B2894 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 334777911C60EB51007B2894 /* Multitap */;
+			targetProxy = 334777AC1C60EB52007B2894 /* PBXContainerItemProxy */;
+		};
+		334777B81C60EB52007B2894 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 334777911C60EB51007B2894 /* Multitap */;
+			targetProxy = 334777B71C60EB52007B2894 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3347779E1C60EB52007B2894 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3347779F1C60EB52007B2894 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		334777A31C60EB52007B2894 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				334777A41C60EB52007B2894 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		334777BD1C60EB52007B2894 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		334777BE1C60EB52007B2894 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		334777C01C60EB52007B2894 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Multitap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = academyproject.Multitap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		334777C11C60EB52007B2894 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Multitap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = academyproject.Multitap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		334777C31C60EB52007B2894 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MultitapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = academyproject.MultitapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Multitap.app/Multitap";
+			};
+			name = Debug;
+		};
+		334777C41C60EB52007B2894 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MultitapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = academyproject.MultitapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Multitap.app/Multitap";
+			};
+			name = Release;
+		};
+		334777C61C60EB52007B2894 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MultitapUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = academyproject.MultitapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Multitap;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		334777C71C60EB52007B2894 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MultitapUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = academyproject.MultitapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Multitap;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3347778D1C60EB51007B2894 /* Build configuration list for PBXProject "Multitap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				334777BD1C60EB52007B2894 /* Debug */,
+				334777BE1C60EB52007B2894 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		334777BF1C60EB52007B2894 /* Build configuration list for PBXNativeTarget "Multitap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				334777C01C60EB52007B2894 /* Debug */,
+				334777C11C60EB52007B2894 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		334777C21C60EB52007B2894 /* Build configuration list for PBXNativeTarget "MultitapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				334777C31C60EB52007B2894 /* Debug */,
+				334777C41C60EB52007B2894 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		334777C51C60EB52007B2894 /* Build configuration list for PBXNativeTarget "MultitapUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				334777C61C60EB52007B2894 /* Debug */,
+				334777C71C60EB52007B2894 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3347778A1C60EB51007B2894 /* Project object */;
+}
