@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		334777971C60EB51007B2894 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 334777961C60EB51007B2894 /* main.m */; };
 		3347779A1C60EB51007B2894 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 334777991C60EB51007B2894 /* AppDelegate.m */; };
-		3347779D1C60EB51007B2894 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3347779C1C60EB51007B2894 /* MenuViewController.m */; };
+		3347779D1C60EB51007B2894 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3347779C1C60EB51007B2894 /* GameViewController.m */; };
 		334777A01C60EB52007B2894 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3347779E1C60EB52007B2894 /* Main.storyboard */; };
 		334777A21C60EB52007B2894 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 334777A11C60EB52007B2894 /* Assets.xcassets */; };
 		334777A51C60EB52007B2894 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 334777A31C60EB52007B2894 /* LaunchScreen.storyboard */; };
@@ -17,6 +17,8 @@
 		334777BB1C60EB52007B2894 /* MultitapUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 334777BA1C60EB52007B2894 /* MultitapUITests.m */; };
 		3374400A1C615B0000798FFA /* FallingBlocksView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 337440091C615B0000798FFA /* FallingBlocksView.xib */; };
 		3374400D1C615B5800798FFA /* FallingBlocksView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3374400C1C615B5800798FFA /* FallingBlocksView.m */; };
+		33D4C1671C62962700F2250F /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4C1661C62962700F2250F /* MainMenuViewController.m */; };
+		33D4C1691C62984800F2250F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D4C1681C62984800F2250F /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +43,8 @@
 		334777961C60EB51007B2894 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		334777981C60EB51007B2894 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		334777991C60EB51007B2894 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3347779B1C60EB51007B2894 /* MenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
-		3347779C1C60EB51007B2894 /* MenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		3347779B1C60EB51007B2894 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		3347779C1C60EB51007B2894 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		3347779F1C60EB52007B2894 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		334777A11C60EB52007B2894 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		334777A41C60EB52007B2894 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +58,9 @@
 		337440091C615B0000798FFA /* FallingBlocksView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FallingBlocksView.xib; sourceTree = "<group>"; };
 		3374400B1C615B5800798FFA /* FallingBlocksView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FallingBlocksView.h; sourceTree = "<group>"; };
 		3374400C1C615B5800798FFA /* FallingBlocksView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FallingBlocksView.m; sourceTree = "<group>"; };
+		33D4C1651C62962700F2250F /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		33D4C1661C62962700F2250F /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		33D4C1681C62984800F2250F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33D4C1691C62984800F2250F /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +92,7 @@
 		334777891C60EB51007B2894 = {
 			isa = PBXGroup;
 			children = (
+				33D4C1681C62984800F2250F /* QuartzCore.framework */,
 				334777941C60EB51007B2894 /* Multitap */,
 				334777AE1C60EB52007B2894 /* MultitapTests */,
 				334777B91C60EB52007B2894 /* MultitapUITests */,
@@ -109,13 +116,15 @@
 				33743FFF1C613C1900798FFA /* Views */,
 				334777981C60EB51007B2894 /* AppDelegate.h */,
 				334777991C60EB51007B2894 /* AppDelegate.m */,
-				3347779B1C60EB51007B2894 /* MenuViewController.h */,
-				3347779C1C60EB51007B2894 /* MenuViewController.m */,
+				3347779B1C60EB51007B2894 /* GameViewController.h */,
+				3347779C1C60EB51007B2894 /* GameViewController.m */,
 				3347779E1C60EB52007B2894 /* Main.storyboard */,
 				334777A11C60EB52007B2894 /* Assets.xcassets */,
 				334777A31C60EB52007B2894 /* LaunchScreen.storyboard */,
 				334777A61C60EB52007B2894 /* Info.plist */,
 				334777951C60EB51007B2894 /* Supporting Files */,
+				33D4C1651C62962700F2250F /* MainMenuViewController.h */,
+				33D4C1661C62962700F2250F /* MainMenuViewController.m */,
 			);
 			path = Multitap;
 			sourceTree = "<group>";
@@ -288,9 +297,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3374400D1C615B5800798FFA /* FallingBlocksView.m in Sources */,
-				3347779D1C60EB51007B2894 /* MenuViewController.m in Sources */,
+				3347779D1C60EB51007B2894 /* GameViewController.m in Sources */,
 				3347779A1C60EB51007B2894 /* AppDelegate.m in Sources */,
 				334777971C60EB51007B2894 /* main.m in Sources */,
+				33D4C1671C62962700F2250F /* MainMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
