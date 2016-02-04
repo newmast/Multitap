@@ -15,8 +15,8 @@
 		334777A51C60EB52007B2894 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 334777A31C60EB52007B2894 /* LaunchScreen.storyboard */; };
 		334777B01C60EB52007B2894 /* MultitapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 334777AF1C60EB52007B2894 /* MultitapTests.m */; };
 		334777BB1C60EB52007B2894 /* MultitapUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 334777BA1C60EB52007B2894 /* MultitapUITests.m */; };
-		3374400A1C615B0000798FFA /* FallingBlocksView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 337440091C615B0000798FFA /* FallingBlocksView.xib */; };
 		3374400D1C615B5800798FFA /* FallingBlocksView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3374400C1C615B5800798FFA /* FallingBlocksView.m */; };
+		33D142911C63735600E44673 /* GameColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D142901C63735600E44673 /* GameColors.m */; };
 		33D4C1671C62962700F2250F /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4C1661C62962700F2250F /* MainMenuViewController.m */; };
 		33D4C1691C62984800F2250F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D4C1681C62984800F2250F /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
@@ -55,9 +55,10 @@
 		334777B61C60EB52007B2894 /* MultitapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultitapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		334777BA1C60EB52007B2894 /* MultitapUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultitapUITests.m; sourceTree = "<group>"; };
 		334777BC1C60EB52007B2894 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		337440091C615B0000798FFA /* FallingBlocksView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FallingBlocksView.xib; sourceTree = "<group>"; };
 		3374400B1C615B5800798FFA /* FallingBlocksView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FallingBlocksView.h; sourceTree = "<group>"; };
 		3374400C1C615B5800798FFA /* FallingBlocksView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FallingBlocksView.m; sourceTree = "<group>"; };
+		33D1428F1C63735600E44673 /* GameColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameColors.h; sourceTree = "<group>"; };
+		33D142901C63735600E44673 /* GameColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameColors.m; sourceTree = "<group>"; };
 		33D4C1651C62962700F2250F /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		33D4C1661C62962700F2250F /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		33D4C1681C62984800F2250F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -125,6 +126,8 @@
 				334777951C60EB51007B2894 /* Supporting Files */,
 				33D4C1651C62962700F2250F /* MainMenuViewController.h */,
 				33D4C1661C62962700F2250F /* MainMenuViewController.m */,
+				33D1428F1C63735600E44673 /* GameColors.h */,
+				33D142901C63735600E44673 /* GameColors.m */,
 			);
 			path = Multitap;
 			sourceTree = "<group>";
@@ -158,7 +161,6 @@
 		33743FFF1C613C1900798FFA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				337440091C615B0000798FFA /* FallingBlocksView.xib */,
 				3374400B1C615B5800798FFA /* FallingBlocksView.h */,
 				3374400C1C615B5800798FFA /* FallingBlocksView.m */,
 			);
@@ -268,7 +270,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3374400A1C615B0000798FFA /* FallingBlocksView.xib in Resources */,
 				334777A51C60EB52007B2894 /* LaunchScreen.storyboard in Resources */,
 				334777A21C60EB52007B2894 /* Assets.xcassets in Resources */,
 				334777A01C60EB52007B2894 /* Main.storyboard in Resources */,
@@ -301,6 +302,7 @@
 				3347779A1C60EB51007B2894 /* AppDelegate.m in Sources */,
 				334777971C60EB51007B2894 /* main.m in Sources */,
 				33D4C1671C62962700F2250F /* MainMenuViewController.m in Sources */,
+				33D142911C63735600E44673 /* GameColors.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GameColors.h"
 
 @interface GameViewController : UIViewController
 

@@ -8,19 +8,13 @@
 
 #import "FallingBlocksView.h"
 
-static NSMutableArray *colors;
-
 @implementation FallingBlocksView
 
 +(instancetype) fallingBlockWithColumns: (int)numberOfColumns
                               andHeight: (double)rowHeight
                                andWidth: (double)rowWidth
 {
-    NSArray* xibViews = [[NSBundle mainBundle] loadNibNamed:@"FallingBlocksView"
-                                                      owner:self
-                                                    options:nil];
-    
-    FallingBlocksView *row = (FallingBlocksView*)[xibViews objectAtIndex:0];
+    FallingBlocksView *row = [FallingBlocksView new];
     CGRect frame = CGRectMake(0, 0, rowWidth, rowHeight);
     row.frame = frame;
     
@@ -30,13 +24,11 @@ static NSMutableArray *colors;
     double originX = frame.origin.x;
     double originY = frame.origin.y;
     
-    NSUInteger randomIndex;
-    
     for (int i = 0; i < numberOfColumns; i++)
     {
         UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(originX + i * blockWidth, originY, blockWidth, blockHeight)];
-        randomIndex = arc4random() % [[self getColors] count];
-        button.backgroundColor = [self getColors][randomIndex];
+        
+        button.backgroundColor = [GameColors getRandomColor];
         [button setTitle: @"" forState:UIControlStateNormal];
         [button setTag:i];
         [row addSubview:button];
@@ -45,22 +37,6 @@ static NSMutableArray *colors;
     return row;
 }
 
-+(NSMutableArray *)getColors
-{
-    if ([colors count] == 0)
-    {
-        colors = [NSMutableArray array];
-        float INCREMENT = 0.05;
-        for (float hue = 0.0; hue < 1.0; hue += INCREMENT) {
-            UIColor *color = [UIColor colorWithHue:hue
-                                        saturation:1.0
-                                        brightness:1.0
-                                             alpha:1.0];
-            [colors addObject:color];
-        }
-    }
-    
-    return colors;
-}
+
 
 @end

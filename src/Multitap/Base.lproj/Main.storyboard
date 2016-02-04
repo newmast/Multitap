@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -21,18 +22,32 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ykd-iR-LTZ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="73"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dI3-rE-Is9">
-                                        <rect key="frame" x="300" y="8" width="292" height="57"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvH-pq-ngX">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvH-pq-ngX">
                                         <rect key="frame" x="8" y="8" width="192" height="57"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="192" id="CTM-tf-6Xx"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dI3-rE-Is9">
+                                        <rect key="frame" x="154" y="8" width="292" height="57"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="292" id="JwK-zj-IPg"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="dI3-rE-Is9" firstAttribute="bottom" secondItem="tvH-pq-ngX" secondAttribute="bottom" id="3T1-Ak-zJ4"/>
+                                    <constraint firstItem="dI3-rE-Is9" firstAttribute="centerX" secondItem="Ykd-iR-LTZ" secondAttribute="centerX" id="Fsu-U3-nYn"/>
+                                    <constraint firstItem="tvH-pq-ngX" firstAttribute="top" secondItem="dI3-rE-Is9" secondAttribute="top" id="Pdf-lh-jDp"/>
+                                    <constraint firstItem="tvH-pq-ngX" firstAttribute="leading" secondItem="Ykd-iR-LTZ" secondAttribute="leadingMargin" id="UQv-ee-n1y"/>
+                                    <constraint firstItem="tvH-pq-ngX" firstAttribute="top" secondItem="Ykd-iR-LTZ" secondAttribute="topMargin" id="WUI-Wf-UPD"/>
+                                    <constraint firstItem="tvH-pq-ngX" firstAttribute="bottom" secondItem="Ykd-iR-LTZ" secondAttribute="bottomMargin" id="bGu-qe-eUb"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hnk-8b-58t">
                                 <rect key="frame" x="0.0" y="81" width="600" height="519"/>
