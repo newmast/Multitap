@@ -15,4 +15,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *rightBlock;
 @property (weak, nonatomic) IBOutlet UIButton *rightmostBlock;
 
++(instancetype) fallingBlockWithColumns: (int)numberOfColumns
+                              andHeight: (double)rowHeight
+                               andWidth: (double)rowWidth;
+
 @end

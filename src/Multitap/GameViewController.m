@@ -31,10 +31,10 @@
     
     // Initialize game view components
     _speed = 8;
-    _rowHeight = self.gameView.bounds.size.height / 7;
+    _rowHeight = self.gameView.bounds.size.height / 8;
     _rowWidth = self.gameView.bounds.size.width;
     
-    [NSTimer scheduledTimerWithTimeInterval: 5
+    [NSTimer scheduledTimerWithTimeInterval: 0.8
                                      target:self
                                    selector:@selector(spawnRow)
                                    userInfo:nil
@@ -54,73 +54,36 @@
             withEvent:(UIEvent *)event {
     
     UITouch *touch = [touches anyObject];
-    CGPoint touchLocation = [touch locationInView:self.view];
+    CGPoint touchLocation = [touch locationInView:self.gameView];
     
-    for (UIView *view in self.gameView.subviews)
+    for (FallingBlocksView *view in self.gameView.subviews)
     {
-        CGRect rect = [[[view layer] presentationLayer] frame];
-        if (CGRectContainsPoint(rect, touchLocation)) {
-            NSLog(@"YES!");
-            break;
+        for (UIButton *buttonView in view.subviews)
+        {
+            if ([buttonView.layer.presentationLayer hitTest: touchLocation]) {
+                [self addPoints];
+                break;
+            }
         }
     }
 }
 
 - (void)spawnRow {
-    NSArray* xibViews = [[NSBundle mainBundle] loadNibNamed:@"FallingBlocksView"
-                                                      owner:self
-                                                    options:nil];
+    int numberOfColumns = 4;
+    double blockHeight = _rowHeight;
+    double blockWidth = _rowWidth / numberOfColumns;
     
-    FallingBlocksView *row = (FallingBlocksView*)[xibViews objectAtIndex:0];
-    CGRect frame = CGRectMake(0, 0, self.gameView.bounds.size.width, self.gameView.bounds.size.height / 8);
-    row.frame = frame;
-    double blockHeight = frame.size.height;
-    double blockWidth = frame.size.width / 4;
-    
-    double originX = frame.origin.x;
-    double originY = frame.origin.y;
-    
-    // TODO: Optimize!
-    NSMutableArray *colors = [NSMutableArray array];
-    float INCREMENT = 0.05;
-    for (float hue = 0.0; hue < 1.0; hue += INCREMENT) {
-        UIColor *color = [UIColor colorWithHue:hue
-                                    saturation:1.0
-                                    brightness:1.0
-                                         alpha:1.0];
-        [colors addObject:color];
-    }
-    NSUInteger randomIndex;
-    
-    randomIndex = arc4random() % [colors count];
-    row.leftmostBlock.backgroundColor = colors[randomIndex];
-    row.leftmostBlock.frame = CGRectMake(originX + 0 * blockWidth, originY, blockWidth, blockHeight);
-    
-    randomIndex = arc4random() % [colors count];
-    row.leftBlock.backgroundColor = colors[randomIndex];
-    row.leftBlock.frame = CGRectMake(originX + 1 * blockWidth, originY, blockWidth, blockHeight);
-    
-    randomIndex = arc4random() % [colors count];
-    row.rightBlock.backgroundColor = colors[randomIndex];
-    row.rightBlock.frame = CGRectMake(originX + 2 * blockWidth, originY, blockWidth, blockHeight);
-    
-    randomIndex = arc4random() % [colors count];
-    row.rightmostBlock.backgroundColor = colors[randomIndex];
-    row.rightmostBlock.frame = CGRectMake(originX + 3 * blockWidth, originY, blockWidth, blockHeight);
-    
-    [row.leftmostBlock setTitle:@"" forState:UIControlStateNormal];
-    [row.leftBlock setTitle:@"" forState:UIControlStateNormal];
-    [row.rightBlock setTitle:@"" forState:UIControlStateNormal];
-    [row.rightmostBlock setTitle:@"" forState:UIControlStateNormal];
-    
+    FallingBlocksView *row = [FallingBlocksView fallingBlockWithColumns:numberOfColumns andHeight:_rowHeight andWidth:_rowWidth];
     [self.gameView addSubview:row];
     
     [UIButton animateWithDuration: _speed
                           delay: 0
-                        options: UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionCurveLinear
+                        options: UIViewAnimationOptionCurveLinear | UIViewAnimationOptionAllowUserInteraction
                      animations:^{
-                         //row.frame = CGRectMake(0, self.view.bounds.size.height, _rowWidth, _rowHeight);
-                         row.center = CGPointMake(0, 0);
+                         for (UIButton *buttonView in row.subviews)
+                         {
+                             buttonView.frame = CGRectMake(buttonView.tag * blockWidth, self.view.bounds.size.height, blockWidth, blockHeight);
+                         }
                      }
                      completion:^(BOOL finished){
                          [row removeFromSuperview];
