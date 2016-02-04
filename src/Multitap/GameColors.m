@@ -17,7 +17,7 @@ static NSMutableArray *colors;
     if ([colors count] == 0)
     {
         colors = [NSMutableArray array];
-        float INCREMENT = 0.05;
+        float INCREMENT = 0.2;
         for (float hue = 0.0; hue < 1; hue += INCREMENT) {
             UIColor *color = [UIColor colorWithHue:hue
                                         saturation:1.0

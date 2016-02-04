@@ -7,8 +7,6 @@
 //
 
 #import "GameViewController.h"
-#import "FallingBlocksView.h"
-#import <QuartzCore/QuartzCore.h>
 
 @interface GameViewController ()
 @end
@@ -22,24 +20,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    
     [self.gameView layoutIfNeeded];
     self.gameView.tag = 0;
-    
+    self.topBarView.layer.zPosition = 1;
     // Initialize top bar view components
     self.pointsLabel.textColor = [UIColor whiteColor];
     self.pointsLabel.text = @"0";
-    [self.currentColorLabel setTitle:@"" forState:UIControlStateNormal];
-    
+    self.pointsLabel.textAlignment = NSTextAlignmentCenter;
+    self.pointsLabel.center = self.topBarView.center;
     // Initialize game view components
-    _speed = 8;
+    _speed = 4;
     _rowHeight = self.gameView.bounds.size.height / 8;
     _rowWidth = self.gameView.bounds.size.width;
     
-    [NSTimer scheduledTimerWithTimeInterval: 0.8
+    [self spawnRow];
+    [NSTimer scheduledTimerWithTimeInterval: _speed / ceil(self.gameView.bounds.size.height + 1) * floor(0.9 * _rowHeight)
                                      target:self
                                    selector:@selector(spawnRow)
                                    userInfo:nil
                                     repeats:YES];
+    
+    [self changeMainColor];
     [NSTimer scheduledTimerWithTimeInterval: 10
                                      target:self
                                    selector:@selector(changeMainColor)
@@ -50,7 +54,7 @@
 - (void)changeMainColor
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        self.currentColorLabel.backgroundColor = [GameColors getRandomColor];
+        self.topBarView.backgroundColor = [GameColors getRandomColor];
     });
 }
 
@@ -58,7 +62,7 @@
 {
     NSInteger currentPoints = [[self.pointsLabel text] integerValue];
     UIImage *img = nil;
-    if (CGColorEqualToColor([clickedView backgroundColor].CGColor, [self.currentColorLabel backgroundColor].CGColor))
+    if (CGColorEqualToColor([clickedView backgroundColor].CGColor, [self.topBarView backgroundColor].CGColor))
     {
         currentPoints++;
         img = [UIImage imageNamed:@"broken_glass"];
@@ -68,13 +72,11 @@
         currentPoints--;
     }
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if (img != nil)
-        {
-            [clickedView setImage:img forState:UIControlStateNormal];
-        }
-        self.pointsLabel.text = [NSString stringWithFormat:@"%ld", currentPoints];
-    });
+    if (img != nil)
+    {
+        [clickedView setImage:img forState:UIControlStateNormal];
+    }
+    self.pointsLabel.text = [NSString stringWithFormat:@"%ld", currentPoints];
 }
 
 - (void)touchesBegan:(NSSet *)touches
@@ -85,14 +87,18 @@
     
     for (FallingBlocksView *view in self.gameView.subviews)
     {
-        for (UIButton *buttonView in view.subviews)
-        {
-            if ([buttonView.layer.presentationLayer hitTest: touchLocation]) {
-                if (![buttonView backgroundImageForState:UIControlStateNormal])
-                {
-                    [self updatePoints:buttonView];
+        if ([view.layer.presentationLayer hitTest: touchLocation]) {
+            for (UIButton *buttonView in view.subviews)
+            {
+                if ([buttonView.layer.presentationLayer hitTest: touchLocation]) {
+                    if (![buttonView backgroundImageForState:UIControlStateNormal])
+                    {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [self updatePoints:buttonView];
+                        });
+                    }
+                    break;
                 }
-                break;
             }
         }
     }
@@ -109,19 +115,19 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.gameView addSubview:row];
         
-        [UIButton animateWithDuration: _speed
-                                delay: 0
-                              options: UIViewAnimationOptionCurveLinear | UIViewAnimationOptionAllowUserInteraction
-                           animations:^{
-                               for (UIButton *buttonView in row.subviews)
-                               {
-                                   buttonView.frame = CGRectMake(buttonView.tag * blockWidth, self.view.bounds.size.height, blockWidth, blockHeight);
-                               }
-                           }
-                           completion:^(BOOL finished){
-                               [row removeFromSuperview];
-                           }];
     });
+    [UIButton animateWithDuration: _speed
+                            delay: 0
+                          options: UIViewAnimationOptionCurveLinear | UIViewAnimationOptionAllowUserInteraction
+                       animations:^{
+                            for (UIButton *buttonView in row.subviews)
+                            {
+                                buttonView.frame = CGRectMake(buttonView.tag * blockWidth, self.gameView.bounds.size.height + blockHeight, blockWidth, blockHeight);
+                            }
+                        }
+                        completion:^(BOOL finished){
+                            [row removeFromSuperview];
+                        }];
     
 }
 

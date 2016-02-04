@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3311349B1C63E93600003A68 /* GlobalHighscore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3311349A1C63E93600003A68 /* GlobalHighscore.m */; };
 		334777971C60EB51007B2894 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 334777961C60EB51007B2894 /* main.m */; };
 		3347779A1C60EB51007B2894 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 334777991C60EB51007B2894 /* AppDelegate.m */; };
 		3347779D1C60EB51007B2894 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3347779C1C60EB51007B2894 /* GameViewController.m */; };
@@ -19,6 +20,7 @@
 		33D142911C63735600E44673 /* GameColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D142901C63735600E44673 /* GameColors.m */; };
 		33D4C1671C62962700F2250F /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4C1661C62962700F2250F /* MainMenuViewController.m */; };
 		33D4C1691C62984800F2250F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D4C1681C62984800F2250F /* QuartzCore.framework */; };
+		4A6FE0EB1005F6FD64F0907F /* Pods_Multitap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F6F36BEB6251F1FDC2C584A /* Pods_Multitap.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F6F36BEB6251F1FDC2C584A /* Pods_Multitap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Multitap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31D5769C28F8C3434CC3D155 /* Pods-Multitap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multitap.release.xcconfig"; path = "Pods/Target Support Files/Pods-Multitap/Pods-Multitap.release.xcconfig"; sourceTree = "<group>"; };
+		331134991C63E93600003A68 /* GlobalHighscore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalHighscore.h; sourceTree = "<group>"; };
+		3311349A1C63E93600003A68 /* GlobalHighscore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalHighscore.m; sourceTree = "<group>"; };
 		334777921C60EB51007B2894 /* Multitap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Multitap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		334777961C60EB51007B2894 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		334777981C60EB51007B2894 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -62,6 +68,7 @@
 		33D4C1651C62962700F2250F /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		33D4C1661C62962700F2250F /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		33D4C1681C62984800F2250F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3E93C311585A23EDB745B7F6 /* Pods-Multitap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multitap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Multitap/Pods-Multitap.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +77,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33D4C1691C62984800F2250F /* QuartzCore.framework in Frameworks */,
+				4A6FE0EB1005F6FD64F0907F /* Pods_Multitap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +98,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		331134961C63E4A500003A68 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				331134981C63E4B700003A68 /* Local */,
+				331134971C63E4B200003A68 /* Remote */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		331134971C63E4B200003A68 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				331134991C63E93600003A68 /* GlobalHighscore.h */,
+				3311349A1C63E93600003A68 /* GlobalHighscore.m */,
+			);
+			name = Remote;
+			sourceTree = "<group>";
+		};
+		331134981C63E4B700003A68 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Local;
+			sourceTree = "<group>";
+		};
 		334777891C60EB51007B2894 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +131,8 @@
 				334777AE1C60EB52007B2894 /* MultitapTests */,
 				334777B91C60EB52007B2894 /* MultitapUITests */,
 				334777931C60EB51007B2894 /* Products */,
+				E3CA77BC1EA7AEAB702EE62D /* Pods */,
+				B599ED6F80E896A149D87981 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,6 +149,7 @@
 		334777941C60EB51007B2894 /* Multitap */ = {
 			isa = PBXGroup;
 			children = (
+				331134961C63E4A500003A68 /* Models */,
 				33743FFF1C613C1900798FFA /* Views */,
 				334777981C60EB51007B2894 /* AppDelegate.h */,
 				334777991C60EB51007B2894 /* AppDelegate.m */,
@@ -167,6 +203,23 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		B599ED6F80E896A149D87981 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F6F36BEB6251F1FDC2C584A /* Pods_Multitap.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E3CA77BC1EA7AEAB702EE62D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3E93C311585A23EDB745B7F6 /* Pods-Multitap.debug.xcconfig */,
+				31D5769C28F8C3434CC3D155 /* Pods-Multitap.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -174,9 +227,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 334777BF1C60EB52007B2894 /* Build configuration list for PBXNativeTarget "Multitap" */;
 			buildPhases = (
+				F64D6A1B99FBCC46204D655D /* Check Pods Manifest.lock */,
 				3347778E1C60EB51007B2894 /* Sources */,
 				3347778F1C60EB51007B2894 /* Frameworks */,
 				334777901C60EB51007B2894 /* Resources */,
+				9AB43A5682F42A62DEC8EAF4 /* Embed Pods Frameworks */,
+				4E328FFBAC76CD2028D494AC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -292,12 +348,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4E328FFBAC76CD2028D494AC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Multitap/Pods-Multitap-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9AB43A5682F42A62DEC8EAF4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Multitap/Pods-Multitap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F64D6A1B99FBCC46204D655D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3347778E1C60EB51007B2894 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3374400D1C615B5800798FFA /* FallingBlocksView.m in Sources */,
+				3311349B1C63E93600003A68 /* GlobalHighscore.m in Sources */,
 				3347779D1C60EB51007B2894 /* GameViewController.m in Sources */,
 				3347779A1C60EB51007B2894 /* AppDelegate.m in Sources */,
 				334777971C60EB51007B2894 /* main.m in Sources */,
@@ -441,6 +546,7 @@
 		};
 		334777C01C60EB52007B2894 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E93C311585A23EDB745B7F6 /* Pods-Multitap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Multitap/Info.plist;
@@ -452,6 +558,7 @@
 		};
 		334777C11C60EB52007B2894 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31D5769C28F8C3434CC3D155 /* Pods-Multitap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Multitap/Info.plist;

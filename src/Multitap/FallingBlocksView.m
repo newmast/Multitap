@@ -14,21 +14,23 @@
                               andHeight: (double)rowHeight
                                andWidth: (double)rowWidth
 {
+    rowHeight = ceil(rowHeight);
+    rowWidth = ceil(rowWidth);
     FallingBlocksView *row = [FallingBlocksView new];
     CGRect frame = CGRectMake(0, 0, rowWidth, rowHeight);
     row.frame = frame;
     
     double blockHeight = rowHeight;
-    double blockWidth = rowWidth / numberOfColumns;
+    double blockWidth = ceil(rowWidth / numberOfColumns);
     
-    double originX = frame.origin.x;
-    double originY = frame.origin.y;
+    //double originX = frame.origin.x;
+    //double originY = frame.origin.y;
     
     for (int i = 0; i < numberOfColumns; i++)
     {
-        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(originX + i * blockWidth, originY, blockWidth, blockHeight)];
-        
-        button.backgroundColor = [GameColors getRandomColor];
+        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(i * blockWidth, 0, blockWidth, blockHeight)];
+        [button.layer removeAllAnimations];
+        [button setBackgroundColor: [GameColors getRandomColor]];
         [button setTitle: @"" forState:UIControlStateNormal];
         [button setTag:i];
         [row addSubview:button];

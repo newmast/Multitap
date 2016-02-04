@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "GameColors.h"
+#import "GlobalHighscore.h"
+#import "FallingBlocksView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface GameViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIView *topBarView;
 @property (weak, nonatomic) IBOutlet UIView *gameView;
 @property (weak, nonatomic) IBOutlet UILabel *pointsLabel;
-@property (weak, nonatomic) IBOutlet UIButton *currentColorLabel;
 
 @end
 

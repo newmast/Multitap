@@ -22,31 +22,20 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ykd-iR-LTZ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="73"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvH-pq-ngX">
-                                        <rect key="frame" x="8" y="8" width="192" height="57"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="192" id="CTM-tf-6Xx"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvH-pq-ngX">
+                                        <rect key="frame" x="8" y="8" width="584" height="57"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
+                                        <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dI3-rE-Is9">
-                                        <rect key="frame" x="154" y="8" width="292" height="57"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="292" id="JwK-zj-IPg"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="dI3-rE-Is9" firstAttribute="bottom" secondItem="tvH-pq-ngX" secondAttribute="bottom" id="3T1-Ak-zJ4"/>
-                                    <constraint firstItem="dI3-rE-Is9" firstAttribute="centerX" secondItem="Ykd-iR-LTZ" secondAttribute="centerX" id="Fsu-U3-nYn"/>
-                                    <constraint firstItem="tvH-pq-ngX" firstAttribute="top" secondItem="dI3-rE-Is9" secondAttribute="top" id="Pdf-lh-jDp"/>
-                                    <constraint firstItem="tvH-pq-ngX" firstAttribute="leading" secondItem="Ykd-iR-LTZ" secondAttribute="leadingMargin" id="UQv-ee-n1y"/>
-                                    <constraint firstItem="tvH-pq-ngX" firstAttribute="top" secondItem="Ykd-iR-LTZ" secondAttribute="topMargin" id="WUI-Wf-UPD"/>
-                                    <constraint firstItem="tvH-pq-ngX" firstAttribute="bottom" secondItem="Ykd-iR-LTZ" secondAttribute="bottomMargin" id="bGu-qe-eUb"/>
+                                    <constraint firstItem="tvH-pq-ngX" firstAttribute="top" secondItem="Ykd-iR-LTZ" secondAttribute="topMargin" id="42x-J5-bpM"/>
+                                    <constraint firstItem="tvH-pq-ngX" firstAttribute="leading" secondItem="Ykd-iR-LTZ" secondAttribute="leadingMargin" id="VaD-o2-BI0"/>
+                                    <constraint firstItem="tvH-pq-ngX" firstAttribute="bottom" secondItem="Ykd-iR-LTZ" secondAttribute="bottomMargin" id="YmA-Dt-gHq"/>
+                                    <constraint firstItem="tvH-pq-ngX" firstAttribute="trailing" secondItem="Ykd-iR-LTZ" secondAttribute="trailingMargin" id="v2a-Bg-3qk"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hnk-8b-58t">
@@ -68,7 +57,6 @@
                     </view>
                     <connections>
                         <outlet property="GameView" destination="hnk-8b-58t" id="sem-cZ-Ur7"/>
-                        <outlet property="currentColorLabel" destination="dI3-rE-Is9" id="hOc-oO-7mo"/>
                         <outlet property="gameView" destination="hnk-8b-58t" id="FOS-Zz-0FH"/>
                         <outlet property="pointsLabel" destination="tvH-pq-ngX" id="eYE-Mq-pDX"/>
                         <outlet property="topBarView" destination="Ykd-iR-LTZ" id="HvW-bI-fPN"/>
