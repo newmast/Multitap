@@ -7,6 +7,7 @@
 //
 
 #import "GameViewController.h"
+#import "LocalHighscore.h"
 
 @interface GameViewController ()
 @end
@@ -20,9 +21,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    
     [self.gameView layoutIfNeeded];
     self.gameView.tag = 0;
     self.topBarView.layer.zPosition = 1;

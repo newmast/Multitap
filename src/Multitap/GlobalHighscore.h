@@ -13,6 +13,7 @@
 
 @property(nonatomic) int highscore;
 @property(strong, nonatomic) NSString *playerName;
+@property(strong, nonatomic) NSString *location;
 @property(strong, nonatomic) UIImage *victorySelfie;
 
 +(NSString *) parseClassName;

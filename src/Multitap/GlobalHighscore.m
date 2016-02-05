@@ -13,6 +13,7 @@
 @dynamic highscore;
 @dynamic victorySelfie;
 @dynamic playerName;
+@dynamic location;
 
 + (void)load
 {
