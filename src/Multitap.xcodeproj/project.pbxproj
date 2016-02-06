@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3300CD611C655E38009C5E35 /* OptionsMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3300CD601C655E38009C5E35 /* OptionsMenuViewController.m */; };
+		3300CD641C656DEE009C5E35 /* FinishedGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3300CD631C656DEE009C5E35 /* FinishedGameViewController.m */; };
 		3311349B1C63E93600003A68 /* GlobalHighscore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3311349A1C63E93600003A68 /* GlobalHighscore.m */; };
 		334777971C60EB51007B2894 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 334777961C60EB51007B2894 /* main.m */; };
 		3347779A1C60EB51007B2894 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 334777991C60EB51007B2894 /* AppDelegate.m */; };
@@ -21,6 +23,9 @@
 		33D142911C63735600E44673 /* GameColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D142901C63735600E44673 /* GameColors.m */; };
 		33D4C1671C62962700F2250F /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4C1661C62962700F2250F /* MainMenuViewController.m */; };
 		33D4C1691C62984800F2250F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D4C1681C62984800F2250F /* QuartzCore.framework */; };
+		33E8C64C1C660AEF00B3E5F1 /* MenuButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E8C64B1C660AEF00B3E5F1 /* MenuButtonView.m */; };
+		33E8C64E1C661C2A00B3E5F1 /* OptionsItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33E8C64D1C661C2A00B3E5F1 /* OptionsItemView.xib */; };
+		33E8C6511C661D2D00B3E5F1 /* OptionsItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E8C6501C661D2D00B3E5F1 /* OptionsItemView.m */; };
 		3EF96E007F5200920D0405AA /* Pods_Multitap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BDBA9FA8C574A3497D2462 /* Pods_Multitap.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +48,10 @@
 
 /* Begin PBXFileReference section */
 		28BDBA9FA8C574A3497D2462 /* Pods_Multitap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Multitap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3300CD5F1C655E38009C5E35 /* OptionsMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsMenuViewController.h; sourceTree = "<group>"; };
+		3300CD601C655E38009C5E35 /* OptionsMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsMenuViewController.m; sourceTree = "<group>"; };
+		3300CD621C656DEE009C5E35 /* FinishedGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishedGameViewController.h; sourceTree = "<group>"; };
+		3300CD631C656DEE009C5E35 /* FinishedGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishedGameViewController.m; sourceTree = "<group>"; };
 		331134991C63E93600003A68 /* GlobalHighscore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalHighscore.h; sourceTree = "<group>"; };
 		3311349A1C63E93600003A68 /* GlobalHighscore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalHighscore.m; sourceTree = "<group>"; };
 		334777921C60EB51007B2894 /* Multitap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Multitap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +79,11 @@
 		33D4C1651C62962700F2250F /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		33D4C1661C62962700F2250F /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		33D4C1681C62984800F2250F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		33E8C64A1C660AEF00B3E5F1 /* MenuButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuButtonView.h; sourceTree = "<group>"; };
+		33E8C64B1C660AEF00B3E5F1 /* MenuButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuButtonView.m; sourceTree = "<group>"; };
+		33E8C64D1C661C2A00B3E5F1 /* OptionsItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionsItemView.xib; sourceTree = "<group>"; };
+		33E8C64F1C661D2D00B3E5F1 /* OptionsItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsItemView.h; sourceTree = "<group>"; };
+		33E8C6501C661D2D00B3E5F1 /* OptionsItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsItemView.m; sourceTree = "<group>"; };
 		C96356FA3804AB857121D065 /* Pods-Multitap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multitap.release.xcconfig"; path = "Pods/Target Support Files/Pods-Multitap/Pods-Multitap.release.xcconfig"; sourceTree = "<group>"; };
 		EC088BA6DD57DECA8B4FCFFB /* Pods-Multitap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multitap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Multitap/Pods-Multitap.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,6 +121,28 @@
 				28BDBA9FA8C574A3497D2462 /* Pods_Multitap.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3300CD5D1C655CD1009C5E35 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		3300CD5E1C655CF2009C5E35 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3347779B1C60EB51007B2894 /* GameViewController.h */,
+				3347779C1C60EB51007B2894 /* GameViewController.m */,
+				33D4C1651C62962700F2250F /* MainMenuViewController.h */,
+				33D4C1661C62962700F2250F /* MainMenuViewController.m */,
+				3300CD5F1C655E38009C5E35 /* OptionsMenuViewController.h */,
+				3300CD601C655E38009C5E35 /* OptionsMenuViewController.m */,
+				3300CD621C656DEE009C5E35 /* FinishedGameViewController.h */,
+				3300CD631C656DEE009C5E35 /* FinishedGameViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		331134961C63E4A500003A68 /* Models */ = {
@@ -162,19 +198,18 @@
 		334777941C60EB51007B2894 /* Multitap */ = {
 			isa = PBXGroup;
 			children = (
+				33E8C6521C66443900B3E5F1 /* Segues */,
+				3347779E1C60EB52007B2894 /* Main.storyboard */,
+				3300CD5E1C655CF2009C5E35 /* ViewControllers */,
+				3300CD5D1C655CD1009C5E35 /* Data */,
 				331134961C63E4A500003A68 /* Models */,
 				33743FFF1C613C1900798FFA /* Views */,
 				334777981C60EB51007B2894 /* AppDelegate.h */,
 				334777991C60EB51007B2894 /* AppDelegate.m */,
-				3347779B1C60EB51007B2894 /* GameViewController.h */,
-				3347779C1C60EB51007B2894 /* GameViewController.m */,
-				3347779E1C60EB52007B2894 /* Main.storyboard */,
 				334777A11C60EB52007B2894 /* Assets.xcassets */,
 				334777A31C60EB52007B2894 /* LaunchScreen.storyboard */,
 				334777A61C60EB52007B2894 /* Info.plist */,
 				334777951C60EB51007B2894 /* Supporting Files */,
-				33D4C1651C62962700F2250F /* MainMenuViewController.h */,
-				33D4C1661C62962700F2250F /* MainMenuViewController.m */,
 				33D1428F1C63735600E44673 /* GameColors.h */,
 				33D142901C63735600E44673 /* GameColors.m */,
 			);
@@ -212,8 +247,20 @@
 			children = (
 				3374400B1C615B5800798FFA /* FallingBlocksView.h */,
 				3374400C1C615B5800798FFA /* FallingBlocksView.m */,
+				33E8C64A1C660AEF00B3E5F1 /* MenuButtonView.h */,
+				33E8C64B1C660AEF00B3E5F1 /* MenuButtonView.m */,
+				33E8C64D1C661C2A00B3E5F1 /* OptionsItemView.xib */,
+				33E8C64F1C661D2D00B3E5F1 /* OptionsItemView.h */,
+				33E8C6501C661D2D00B3E5F1 /* OptionsItemView.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		33E8C6521C66443900B3E5F1 /* Segues */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Segues;
 			sourceTree = "<group>";
 		};
 		A3C4212DE90E55488DDF3AB2 /* Pods */ = {
@@ -333,6 +380,7 @@
 			files = (
 				334777A51C60EB52007B2894 /* LaunchScreen.storyboard in Resources */,
 				334777A21C60EB52007B2894 /* Assets.xcassets in Resources */,
+				33E8C64E1C661C2A00B3E5F1 /* OptionsItemView.xib in Resources */,
 				334777A01C60EB52007B2894 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,7 +460,11 @@
 				3347779D1C60EB51007B2894 /* GameViewController.m in Sources */,
 				3347779A1C60EB51007B2894 /* AppDelegate.m in Sources */,
 				334777971C60EB51007B2894 /* main.m in Sources */,
+				33E8C64C1C660AEF00B3E5F1 /* MenuButtonView.m in Sources */,
+				3300CD611C655E38009C5E35 /* OptionsMenuViewController.m in Sources */,
 				33D4C1671C62962700F2250F /* MainMenuViewController.m in Sources */,
+				3300CD641C656DEE009C5E35 /* FinishedGameViewController.m in Sources */,
+				33E8C6511C661D2D00B3E5F1 /* OptionsItemView.m in Sources */,
 				33D142911C63735600E44673 /* GameColors.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

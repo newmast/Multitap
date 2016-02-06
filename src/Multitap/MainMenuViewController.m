@@ -17,22 +17,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self.titleLabel setText:@"MULTITAP"];
+    
+    UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe)];
+    [swipeRecognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+    
+    [self.view addGestureRecognizer: swipeRecognizer];
+    MenuButtonView *button = [[MenuButtonView alloc] initWithFrame: CGRectMake(0,0,200,300)];
+    
+    [button setTitle:@"START" forState:UIControlStateNormal];
+    
+    [button addTarget:self
+                 action:@selector(startGame)
+       forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.stackView addArrangedSubview:button];
+}
+
+-(void)startGame {
+    [self performSegueWithIdentifier:@"startGame" sender:self];
+}
+
+-(void)handleSwipe {
+    [self performSegueWithIdentifier:@"optionsSegue" sender:self];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

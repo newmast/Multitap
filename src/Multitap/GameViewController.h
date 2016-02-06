@@ -11,6 +11,7 @@
 #import "GlobalHighscore.h"
 #import "FallingBlocksView.h"
 #import <QuartzCore/QuartzCore.h>
+#import "FinishedGameViewController.h"
 
 @interface GameViewController : UIViewController
 

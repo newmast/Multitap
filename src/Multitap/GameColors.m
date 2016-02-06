@@ -12,8 +12,7 @@
 
 static NSMutableArray *colors;
 
-+(NSMutableArray *)getColors
-{
++(NSMutableArray *)getColors {
     if ([colors count] == 0)
     {
         colors = [NSMutableArray array];
@@ -30,8 +29,7 @@ static NSMutableArray *colors;
     return colors;
 }
 
-+(NSUInteger) getColorCount
-{
++(NSUInteger) getColorCount {
     if ([colors count] == 0)
     {
         [self getColors];
@@ -40,8 +38,7 @@ static NSMutableArray *colors;
     return [colors count];
 }
 
-+(UIColor *) getRandomColor
-{
++(UIColor *) getRandomColor {
     NSUInteger randomIndex = arc4random() % [self getColorCount];
     
     return [self getColors][randomIndex];

@@ -12,8 +12,7 @@
 @interface GameViewController ()
 @end
 
-@implementation GameViewController
-{
+@implementation GameViewController {
     double _rowHeight;
     double _rowWidth;
     double _speed;
@@ -35,7 +34,7 @@
     _rowWidth = self.gameView.bounds.size.width;
     
     [self spawnRow];
-    [NSTimer scheduledTimerWithTimeInterval: _speed / ceil(self.gameView.bounds.size.height + 1) * floor(0.9 * _rowHeight)
+    [NSTimer scheduledTimerWithTimeInterval: _speed / self.gameView.bounds.size.height * (0.85 * _rowHeight)
                                      target:self
                                    selector:@selector(spawnRow)
                                    userInfo:nil
@@ -49,15 +48,13 @@
                                     repeats:YES];
 }
 
-- (void)changeMainColor
-{
+- (void)changeMainColor {
     dispatch_async(dispatch_get_main_queue(), ^{
         self.topBarView.backgroundColor = [GameColors getRandomColor];
     });
 }
 
-- (void)updatePoints: (UIButton *)clickedView
-{
+- (void)updatePoints: (UIButton *)clickedView {
     NSInteger currentPoints = [[self.pointsLabel text] integerValue];
     UIImage *img = nil;
     if (CGColorEqualToColor([clickedView backgroundColor].CGColor, [self.topBarView backgroundColor].CGColor))
@@ -67,7 +64,7 @@
     }
     else
     {
-        currentPoints--;
+        [self performSegueWithIdentifier:@"finishGame" sender:self];
     }
     
     if (img != nil)
@@ -100,6 +97,12 @@
             }
         }
     }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    FinishedGameViewController *controller = [segue destinationViewController];
+    
+    controller.
 }
 
 - (void)spawnRow {

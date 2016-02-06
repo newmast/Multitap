@@ -23,6 +23,7 @@
     double blockHeight = rowHeight;
     double blockWidth = ceil(rowWidth / numberOfColumns);
     
+    // todo: try with uiview
     for (int i = 0; i < numberOfColumns; i++)
     {
         UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(i * blockWidth, 0, blockWidth, blockHeight)];
