@@ -17,7 +17,7 @@
     rowHeight = ceil(rowHeight);
     rowWidth = ceil(rowWidth);
     FallingBlocksView *row = [FallingBlocksView new];
-    CGRect frame = CGRectMake(0, 0, rowWidth, rowHeight);
+    CGRect frame = CGRectMake(0, -rowHeight, rowWidth, rowHeight);
     row.frame = frame;
     
     double blockHeight = rowHeight;

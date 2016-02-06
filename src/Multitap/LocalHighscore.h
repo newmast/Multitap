@@ -12,7 +12,6 @@
 @interface LocalHighscore : MXSqliteObject
 
 @property (nonatomic, assign) int scoreId;
-@property (nonatomic, assign) int score;
-@property (nonatomic, copy) NSString *playerName;
+@property (nonatomic, assign) long score;
 
 @end

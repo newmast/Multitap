@@ -7,7 +7,6 @@
 //
 
 #import "GameViewController.h"
-#import "LocalHighscore.h"
 
 @interface GameViewController ()
 @end
@@ -33,25 +32,30 @@
     _rowHeight = self.gameView.bounds.size.height / 8;
     _rowWidth = self.gameView.bounds.size.width;
     
-    [self spawnRow];
-    [NSTimer scheduledTimerWithTimeInterval: _speed / self.gameView.bounds.size.height * (0.85 * _rowHeight)
-                                     target:self
-                                   selector:@selector(spawnRow)
-                                   userInfo:nil
-                                    repeats:YES];
+    float spawnInterval = _speed / (self.gameView.bounds.size.height + 2 * _rowHeight) * _rowHeight;
+    float changeMainColorInterval = 10;
     
-    [self changeMainColor];
-    [NSTimer scheduledTimerWithTimeInterval: 10
-                                     target:self
-                                   selector:@selector(changeMainColor)
-                                   userInfo:nil
-                                    repeats:YES];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self spawnRow];
+            [NSTimer scheduledTimerWithTimeInterval:spawnInterval
+                                             target:self
+                                           selector:@selector(spawnRow)
+                                           userInfo:nil
+                                            repeats:YES];
+            
+            [self changeMainColor];
+            [NSTimer scheduledTimerWithTimeInterval:changeMainColorInterval
+                                             target:self
+                                           selector:@selector(changeMainColor)
+                                           userInfo:nil
+                                            repeats:YES];
+        });
+    });
 }
 
 - (void)changeMainColor {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.topBarView.backgroundColor = [GameColors getRandomColor];
-    });
+    self.topBarView.backgroundColor = [GameColors getRandomColor];
 }
 
 - (void)updatePoints: (UIButton *)clickedView {
@@ -83,14 +87,17 @@
     for (FallingBlocksView *view in self.gameView.subviews)
     {
         if ([view.layer.presentationLayer hitTest: touchLocation]) {
-            for (UIButton *buttonView in view.subviews)
+            for (UIButton *block in view.subviews)
             {
-                if ([buttonView.layer.presentationLayer hitTest: touchLocation]) {
-                    if (![buttonView backgroundImageForState:UIControlStateNormal])
+                CGRect oldFrame = [block.layer.presentationLayer frame];
+                
+                CGRect calibratedFrame = oldFrame;
+                calibratedFrame.origin.y -= oldFrame.size.height;
+                
+                if (CGRectContainsPoint(calibratedFrame, touchLocation)) {
+                    if (![block backgroundImageForState:UIControlStateNormal])
                     {
-                        dispatch_async(dispatch_get_main_queue(), ^{
-                            [self updatePoints:buttonView];
-                        });
+                        [self updatePoints:block];
                     }
                     break;
                 }
@@ -100,9 +107,10 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    FinishedGameViewController *controller = [segue destinationViewController];
-    
-    controller.
+    if ([segue.identifier isEqualToString:@"finishGame"]) {
+        FinishedGameViewController *destViewController = segue.destinationViewController;
+        destViewController.currentScore = [[self.pointsLabel text] integerValue];
+    }
 }
 
 - (void)spawnRow {
@@ -113,10 +121,7 @@
     FallingBlocksView *row = [FallingBlocksView fallingBlockWithColumns:numberOfColumns
                                                               andHeight:_rowHeight
                                                                andWidth:_rowWidth];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.gameView addSubview:row];
-        
-    });
+    [self.gameView addSubview:row];
     [UIButton animateWithDuration: _speed
                             delay: 0
                           options: UIViewAnimationOptionCurveLinear | UIViewAnimationOptionAllowUserInteraction

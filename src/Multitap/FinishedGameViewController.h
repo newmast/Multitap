@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LocalHighscore.h"
 
 @interface FinishedGameViewController : UIViewController
+
+@property (nonatomic) long currentScore;
+
 @property (weak, nonatomic) IBOutlet UILabel *endMessageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *callFriendMessage;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;

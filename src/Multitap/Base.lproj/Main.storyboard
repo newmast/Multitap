@@ -60,7 +60,7 @@
                         <outlet property="gameView" destination="hnk-8b-58t" id="FOS-Zz-0FH"/>
                         <outlet property="pointsLabel" destination="tvH-pq-ngX" id="eYE-Mq-pDX"/>
                         <outlet property="topBarView" destination="Ykd-iR-LTZ" id="HvW-bI-fPN"/>
-                        <segue destination="xTW-o6-3T5" kind="custom" identifier="finishedGameSegue" id="NAd-iG-bBp"/>
+                        <segue destination="xTW-o6-3T5" kind="show" identifier="finishGame" animates="NO" id="NAd-iG-bBp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
