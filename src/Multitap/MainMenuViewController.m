@@ -17,30 +17,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationController.navigationBar.hidden = YES;
     [self.titleLabel setText:@"MULTITAP"];
     
-    UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe)];
+    UISwipeGestureRecognizer *swipeRecognizer =
+        [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe)];
+    
     [swipeRecognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
     
     [self.view addGestureRecognizer: swipeRecognizer];
     MenuButtonView *button = [[MenuButtonView alloc] initWithFrame: CGRectMake(0,0,200,300)];
     
-    [button setTitle:@"START" forState:UIControlStateNormal];
+    [button setTitle:@"START"
+            forState:UIControlStateNormal];
     
     [button addTarget:self
-                 action:@selector(startGame)
-       forControlEvents:UIControlEventTouchUpInside];
+               action:@selector(startGame)
+     forControlEvents:UIControlEventTouchUpInside];
     
     [self.stackView addArrangedSubview:button];
 }
 
 -(void)startGame {
-    [self performSegueWithIdentifier:@"startGame" sender:self];
+    [self performSegueWithIdentifier:@"startGame"
+                              sender:self];
 }
 
 -(void)handleSwipe {
-    [self performSegueWithIdentifier:@"optionsSegue" sender:self];
+    [self performSegueWithIdentifier:@"optionsSegue"
+                              sender:self];
 }
 
 - (void)didReceiveMemoryWarning {

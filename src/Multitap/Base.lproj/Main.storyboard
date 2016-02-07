@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RXB-ql-dw4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tHG-dL-KSA">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -38,6 +38,9 @@
                                     <constraint firstItem="tvH-pq-ngX" firstAttribute="trailing" secondItem="Ykd-iR-LTZ" secondAttribute="trailingMargin" id="v2a-Bg-3qk"/>
                                 </constraints>
                             </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UN8-eZ-tcf">
+                                <rect key="frame" x="20" y="14" width="560" height="2"/>
+                            </progressView>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hnk-8b-58t">
                                 <rect key="frame" x="0.0" y="81" width="600" height="519"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -46,9 +49,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hnk-8b-58t" firstAttribute="top" secondItem="Ykd-iR-LTZ" secondAttribute="bottom" constant="8" symbolic="YES" id="Dng-Dl-PjC"/>
+                            <constraint firstItem="UN8-eZ-tcf" firstAttribute="centerX" secondItem="Ykd-iR-LTZ" secondAttribute="centerX" id="NWw-Em-IDO"/>
                             <constraint firstItem="hnk-8b-58t" firstAttribute="trailing" secondItem="Ykd-iR-LTZ" secondAttribute="trailing" id="aVr-xQ-tM9"/>
                             <constraint firstItem="hnk-8b-58t" firstAttribute="leading" secondItem="Ykd-iR-LTZ" secondAttribute="leading" id="hxB-7a-IJ9"/>
+                            <constraint firstItem="UN8-eZ-tcf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ltn-Ju-aiO"/>
                             <constraint firstItem="Ykd-iR-LTZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="q0q-lq-Dco"/>
+                            <constraint firstItem="UN8-eZ-tcf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.05" id="tP6-Ls-0R8"/>
                             <constraint firstAttribute="trailing" secondItem="Ykd-iR-LTZ" secondAttribute="trailing" id="uQD-N6-7LD"/>
                             <constraint firstItem="Ykd-iR-LTZ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.15" id="xcQ-Vf-dEk"/>
                             <constraint firstItem="Ykd-iR-LTZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xpV-0u-Dmq"/>
@@ -59,6 +65,7 @@
                         <outlet property="GameView" destination="hnk-8b-58t" id="sem-cZ-Ur7"/>
                         <outlet property="gameView" destination="hnk-8b-58t" id="FOS-Zz-0FH"/>
                         <outlet property="pointsLabel" destination="tvH-pq-ngX" id="eYE-Mq-pDX"/>
+                        <outlet property="progressView" destination="UN8-eZ-tcf" id="1EP-dx-kGC"/>
                         <outlet property="topBarView" destination="Ykd-iR-LTZ" id="HvW-bI-fPN"/>
                         <segue destination="xTW-o6-3T5" kind="show" identifier="finishGame" animates="NO" id="NAd-iG-bBp"/>
                     </connections>
@@ -106,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UAs-u2-MOg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="634" y="35"/>
+            <point key="canvasLocation" x="1446" y="35"/>
         </scene>
         <!--Main Menu View Controller-->
         <scene sceneID="HhO-wp-wc9">
@@ -120,10 +127,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GgG-AQ-Wr1">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GgG-AQ-Wr1">
                                 <rect key="frame" x="20" y="20" width="560" height="54"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eR0-pw-QoX">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eR0-pw-QoX">
                                         <rect key="frame" x="226" y="0.0" width="108" height="54"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -139,6 +146,7 @@
                             <constraint firstAttribute="trailing" secondItem="GgG-AQ-Wr1" secondAttribute="trailing" constant="20" id="sBF-a0-w6t"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="3H0-dx-R7J"/>
                     <connections>
                         <outlet property="stackView" destination="GgG-AQ-Wr1" id="Uhx-bx-J6G"/>
                         <outlet property="titleLabel" destination="eR0-pw-QoX" id="WW2-Zb-oXr"/>
@@ -148,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYd-ht-42R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-49" y="35"/>
+            <point key="canvasLocation" x="763" y="35"/>
         </scene>
         <!--Finished Game View Controller-->
         <scene sceneID="4ub-zq-2ub">
@@ -186,9 +194,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="32M-N3-w94">
                                         <rect key="frame" x="160" y="63" width="240" height="188"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S6j-q6-bhA">
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VY4-j4-WOp">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                            </imageView>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S6j-q6-bhA">
+                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </scrollView>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uY-Nu-YOm">
                                                 <rect key="frame" x="97" y="128" width="46" height="30"/>
                                                 <state key="normal" title="Button"/>
@@ -213,7 +226,9 @@
                         <outlet property="beatRecordStackView" destination="32M-N3-w94" id="azz-Wy-eXZ"/>
                         <outlet property="callFriendMessage" destination="Nl1-Gf-lJA" id="dHE-DI-F0K"/>
                         <outlet property="endMessageLabel" destination="cc0-QL-ct2" id="IXD-qq-UtT"/>
+                        <outlet property="parentStackView" destination="OrY-c9-1kv" id="4Hz-Cb-43N"/>
                         <outlet property="scoreLabel" destination="xIc-a1-nX6" id="Thr-Qk-3P8"/>
+                        <outlet property="scrollView" destination="VY4-j4-WOp" id="dCu-LZ-iS9"/>
                         <outlet property="shareResultsButton" destination="RSC-Fl-83U" id="Ypz-4B-4WP"/>
                         <outlet property="victorySelfieButton" destination="7uY-Nu-YOm" id="ZQW-uK-6c8"/>
                         <outlet property="victorySelfieImage" destination="S6j-q6-bhA" id="ygB-NQ-ulq"/>
@@ -222,6 +237,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hYx-iw-cC1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-49" y="1477"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2Qx-9G-pgF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tHG-dL-KSA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fb6-Ob-Qqh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RXB-ql-dw4" kind="relationship" relationship="rootViewController" id="gnU-jp-cFg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FT7-Hb-KUg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-49" y="35"/>
         </scene>
     </scenes>
 </document>

@@ -14,7 +14,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [[self titleLabel] setFont: [[self titleLabel].font fontWithSize: 100.0]];
+        [[self titleLabel] setFont: [[self titleLabel].font fontWithSize: 50.0]];
     }
     
     return self;

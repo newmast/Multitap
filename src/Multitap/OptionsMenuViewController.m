@@ -12,11 +12,10 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationController.navigationBar.hidden = YES;
     [self.titleLabel setText:@"Mom's house"];
     
-    OptionsItemView *soundView = [[OptionsItemView alloc] initWithFrame:
-                                   CGRectMake(0, 0, 200, 200)];
+    OptionsItemView *soundView = [[OptionsItemView alloc] initWithFrame: CGRectMake(0, 0, 200, 200)];
     
     [soundView.titleLabel setText:@"Is it too loud?"];
     float systemVolume = [[AVAudioSession sharedInstance] outputVolume];

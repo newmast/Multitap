@@ -6,7 +6,8 @@ use_frameworks!
 target 'Multitap' do
  
 pod 'Parse'
-pod 'MXSqlite'
+
+pod 'SQLitePersistentObject'
 
 end
 

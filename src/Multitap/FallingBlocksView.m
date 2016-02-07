@@ -10,9 +10,11 @@
 
 @implementation FallingBlocksView
 
-+(instancetype) fallingBlockWithColumns: (int)numberOfColumns
-                              andHeight: (double)rowHeight
-                               andWidth: (double)rowWidth
+static int currentButtonId = 0;
+
+-(instancetype) initWithColumns: (int)numberOfColumns
+                      andHeight: (double)rowHeight
+                       andWidth: (double)rowWidth
 {
     rowHeight = ceil(rowHeight);
     rowWidth = ceil(rowWidth);
@@ -23,20 +25,39 @@
     double blockHeight = rowHeight;
     double blockWidth = ceil(rowWidth / numberOfColumns);
     
-    // todo: try with uiview
+    
     for (int i = 0; i < numberOfColumns; i++)
     {
         UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(i * blockWidth, 0, blockWidth, blockHeight)];
         [button.layer removeAllAnimations];
+        
+        int chance = arc4random() % 10;
+        
+        if (chance < 2)
+        {
+            NSString *imageName;
+            if (chance == 0)
+            {
+                imageName = @"doubletap.png";
+            }
+            else if (chance == 1)
+            {
+                imageName = @"longpress.png";
+            }
+            
+            UIImage *image = [UIImage imageNamed:imageName];
+            [button setImage:image forState:UIControlStateNormal];
+            [button.imageView setAccessibilityIdentifier:imageName];
+        }
+        
         [button setBackgroundColor: [GameColors getRandomColor]];
         [button setTitle: @"" forState:UIControlStateNormal];
-        [button setTag:i];
+        [button setTag:currentButtonId];
+        currentButtonId++;
         [row addSubview:button];
     }
     
     return row;
 }
-
-
 
 @end

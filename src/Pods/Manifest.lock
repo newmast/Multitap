@@ -1,21 +1,16 @@
 PODS:
   - Bolts/Tasks (1.6.0)
-  - FMDB (2.6):
-    - FMDB/standard (= 2.6)
-  - FMDB/standard (2.6)
-  - MXSqlite (0.1.1):
-    - FMDB (~> 2.5)
   - Parse (1.12.0):
     - Bolts/Tasks (~> 1.5)
+  - SQLitePersistentObject (0.3.2)
 
 DEPENDENCIES:
-  - MXSqlite
   - Parse
+  - SQLitePersistentObject
 
 SPEC CHECKSUMS:
   Bolts: f52a250053bb517ca874523c3913776359ab3def
-  FMDB: c1968bab3ab0aed38f66cb778ae1e7fa9a652b6e
-  MXSqlite: 35e7370220030e83a38b29aaa57b7fa783572d60
   Parse: de2c52a9a1421b91ae7594ab8ce191afd184f19b
+  SQLitePersistentObject: 6a10c4a73642ac0284311867b89f5fe1e47695a1
 
 COCOAPODS: 0.39.0

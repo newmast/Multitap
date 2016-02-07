@@ -85,13 +85,11 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Multitap/Bolts.framework"
-  install_framework "Pods-Multitap/FMDB.framework"
-  install_framework "Pods-Multitap/MXSqlite.framework"
   install_framework "Pods-Multitap/Parse.framework"
+  install_framework "Pods-Multitap/SQLitePersistentObject.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Multitap/Bolts.framework"
-  install_framework "Pods-Multitap/FMDB.framework"
-  install_framework "Pods-Multitap/MXSqlite.framework"
   install_framework "Pods-Multitap/Parse.framework"
+  install_framework "Pods-Multitap/SQLitePersistentObject.framework"
 fi

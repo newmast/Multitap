@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MXSqliteObject.h"
+#import "SQLitePersistentObject.h"
 
-@interface LocalHighscore : MXSqliteObject
+@interface LocalHighscore : SQLitePersistentObject
 
 @property (nonatomic, assign) int scoreId;
 @property (nonatomic, assign) long score;

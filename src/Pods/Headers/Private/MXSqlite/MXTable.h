@@ -1,1 +1,0 @@
-../../../MXSqlite/MXSqlite/MXTable.h
