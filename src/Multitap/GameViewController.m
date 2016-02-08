@@ -8,7 +8,13 @@
 
 #import "GameViewController.h"
 
+static int const TapGestureFlag = 0;
+static int const DoubleTapGestureFlag = 1;
+static int const LongPressGestureFlag = 2;
+static int const DoubleTapHoldGestureFlag = 3;
+
 @interface GameViewController ()
+
 @end
 
 @implementation GameViewController {
@@ -16,6 +22,7 @@
     double _rowWidth;
     double _transitionDuration;
     long _currentlyPressedButtonId;
+    long _justDoubleTappedButtonId;
     float _changeMainColorInterval;
     NSTimeInterval _longPressTimer;
     float _invulnerabilityTimeAfterChangeColor;
@@ -66,6 +73,8 @@
     _invulnerabilityTimeAfterChangeColor = 1.5;
     _isPlayerInvulnerableFromDefeat = NO;
     
+    _justDoubleTappedButtonId = -1;
+    
     float spawnInterval = _transitionDuration / (self.gameView.bounds.size.height + 2 * _rowHeight) * _rowHeight;
     _changeMainColorInterval = 10;
     
@@ -90,20 +99,24 @@
 
 -(void)handleTap: (UITapGestureRecognizer *)sender {
     UIButton *block = [self getButtonAtLocation:[sender locationInView:self.gameView]];
+    _justDoubleTappedButtonId = [block tag];
     [self updateGameState:block
-                 tapCount:1];
+                 gesture:TapGestureFlag];
 }
 
 -(void)handleDoubleTap: (UITapGestureRecognizer *)sender {
     UIButton *block = [self getButtonAtLocation:[sender locationInView:self.gameView]];
     [self updateGameState:block
-                 tapCount:3];
+                 gesture:DoubleTapGestureFlag];
 }
 
 -(void)handleLongPress: (UILongPressGestureRecognizer *)sender {
     if (sender.state == UIGestureRecognizerStateBegan)
     {
         _currentlyPressedButtonId = [self getButtonAtLocation:[sender locationInView:self.gameView]].tag;
+        if (_currentlyPressedButtonId != _justDoubleTappedButtonId) {
+            _justDoubleTappedButtonId = -1;
+        }
         _longPressTimer = [[NSDate date] timeIntervalSince1970];
     }
     if (sender.state == UIGestureRecognizerStateEnded)
@@ -118,7 +131,15 @@
         UIButton *button = [self getButtonAtLocation:touch];
         
         if (button.tag == _currentlyPressedButtonId) {
-            [self updateGameState:button tapCount:0];
+            if (_justDoubleTappedButtonId > 0 &&
+                _justDoubleTappedButtonId == _currentlyPressedButtonId)
+            {
+                [self updateGameState:button gesture:DoubleTapHoldGestureFlag];
+            }
+            else
+            {
+                [self updateGameState:button gesture:LongPressGestureFlag];
+            }
         }
     }
 }
@@ -146,16 +167,24 @@
 }
 
 - (void)updateGameState:(UIButton *)clickedView
-               tapCount:(NSUInteger)tapCount {
+               gesture:(int)gestureKind {
         
     NSInteger currentPoints = [[self.pointsLabel text] integerValue];
     UIImage *img = nil;
     if (CGColorEqualToColor([clickedView backgroundColor].CGColor, [self.topBarView backgroundColor].CGColor))
     {
         int points = 1;
-        if ([[clickedView.imageView accessibilityIdentifier] isEqualToString: @"longpress.png"])
+        if ([[clickedView.imageView accessibilityIdentifier] isEqualToString: @"lightning.png"])
         {
-            if (tapCount == 0) {
+            if (gestureKind == DoubleTapHoldGestureFlag) {
+                points = 10;
+            } else {
+                return;
+            }
+        }
+        else if ([[clickedView.imageView accessibilityIdentifier] isEqualToString: @"longpress.png"])
+        {
+            if (gestureKind == LongPressGestureFlag) {
                 points = 5;
             } else {
                 return;
@@ -163,7 +192,7 @@
         }
         else if ([[clickedView.imageView accessibilityIdentifier] isEqualToString: @"doubletap.png"])
         {
-            if (tapCount >= 2) {
+            if (gestureKind >= DoubleTapGestureFlag) {
                 points = 3;
             } else {
                 return;

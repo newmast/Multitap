@@ -31,9 +31,9 @@ static int currentButtonId = 0;
         UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(i * blockWidth, 0, blockWidth, blockHeight)];
         [button.layer removeAllAnimations];
         
-        int chance = arc4random() % 10;
+        int chance = arc4random() % 15;
         
-        if (chance < 2)
+        if (chance < 3)
         {
             NSString *imageName;
             if (chance == 0)
@@ -43,6 +43,10 @@ static int currentButtonId = 0;
             else if (chance == 1)
             {
                 imageName = @"longpress.png";
+            }
+            else if (chance == 2)
+            {
+                imageName = @"lightning.png";
             }
             
             UIImage *image = [UIImage imageNamed:imageName];
