@@ -24,7 +24,7 @@
     self.view.userInteractionEnabled = YES;
     [self.view addGestureRecognizer: swipeRecognizer];
 
-    [self.titleLabel setText:@"Mom's house"];
+    [self.titleLabel setText:@"Options menu"];
     
     soundView = [[OptionsItemView alloc] initWithFrame: CGRectMake(0, 0, 200, 200)];
     

@@ -8,6 +8,7 @@
 //
 
 #import "MainMenuViewController.h"
+#import "ArrowView.h"
 
 @interface MainMenuViewController ()
 
