@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3300CD611C655E38009C5E35 /* OptionsMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3300CD601C655E38009C5E35 /* OptionsMenuViewController.m */; };
 		3300CD641C656DEE009C5E35 /* FinishedGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3300CD631C656DEE009C5E35 /* FinishedGameViewController.m */; };
+		3300D1B71C686D4F001DB35A /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3300D1B61C686D4F001DB35A /* backgroundMusic.mp3 */; };
 		3310318E1C68198B006FEAC8 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3310318D1C68198B006FEAC8 /* SoundManager.swift */; };
 		3311349B1C63E93600003A68 /* GlobalHighscore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3311349A1C63E93600003A68 /* GlobalHighscore.m */; };
 		334777971C60EB51007B2894 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 334777961C60EB51007B2894 /* main.m */; };
@@ -21,7 +22,6 @@
 		334777BB1C60EB52007B2894 /* MultitapUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 334777BA1C60EB52007B2894 /* MultitapUITests.m */; };
 		3357CF2B1C653C7000B6363E /* LocalHighscore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3357CF2A1C653C7000B6363E /* LocalHighscore.m */; };
 		3374400D1C615B5800798FFA /* FallingBlocksView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3374400C1C615B5800798FFA /* FallingBlocksView.m */; };
-		33869A8F1C682C620036BCC1 /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 33869A8E1C682C620036BCC1 /* backgroundMusic.mp3 */; };
 		33D142911C63735600E44673 /* GameColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D142901C63735600E44673 /* GameColors.m */; };
 		33D4C1671C62962700F2250F /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4C1661C62962700F2250F /* MainMenuViewController.m */; };
 		33D4C1691C62984800F2250F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D4C1681C62984800F2250F /* QuartzCore.framework */; };
@@ -54,6 +54,7 @@
 		3300CD601C655E38009C5E35 /* OptionsMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsMenuViewController.m; sourceTree = "<group>"; };
 		3300CD621C656DEE009C5E35 /* FinishedGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishedGameViewController.h; sourceTree = "<group>"; };
 		3300CD631C656DEE009C5E35 /* FinishedGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishedGameViewController.m; sourceTree = "<group>"; };
+		3300D1B61C686D4F001DB35A /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = backgroundMusic.mp3; path = ../../../../../Downloads/backgroundMusic.mp3; sourceTree = "<group>"; };
 		3310318D1C68198B006FEAC8 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		331134991C63E93600003A68 /* GlobalHighscore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalHighscore.h; sourceTree = "<group>"; };
 		3311349A1C63E93600003A68 /* GlobalHighscore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalHighscore.m; sourceTree = "<group>"; };
@@ -77,7 +78,6 @@
 		3357CF2A1C653C7000B6363E /* LocalHighscore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalHighscore.m; sourceTree = "<group>"; };
 		3374400B1C615B5800798FFA /* FallingBlocksView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FallingBlocksView.h; sourceTree = "<group>"; };
 		3374400C1C615B5800798FFA /* FallingBlocksView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FallingBlocksView.m; sourceTree = "<group>"; };
-		33869A8E1C682C620036BCC1 /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = backgroundMusic.mp3; path = ../../../Downloads/backgroundMusic.mp3; sourceTree = "<group>"; };
 		33D1428F1C63735600E44673 /* GameColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameColors.h; sourceTree = "<group>"; };
 		33D142901C63735600E44673 /* GameColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameColors.m; sourceTree = "<group>"; };
 		33D4C1651C62962700F2250F /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
@@ -253,7 +253,7 @@
 		33869A8D1C682C4D0036BCC1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				33869A8E1C682C620036BCC1 /* backgroundMusic.mp3 */,
+				3300D1B61C686D4F001DB35A /* backgroundMusic.mp3 */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -383,9 +383,9 @@
 			files = (
 				334777A51C60EB52007B2894 /* LaunchScreen.storyboard in Resources */,
 				334777A21C60EB52007B2894 /* Assets.xcassets in Resources */,
+				3300D1B71C686D4F001DB35A /* backgroundMusic.mp3 in Resources */,
 				33E8C64E1C661C2A00B3E5F1 /* OptionsItemView.xib in Resources */,
 				334777A01C60EB52007B2894 /* Main.storyboard in Resources */,
-				33869A8F1C682C620036BCC1 /* backgroundMusic.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
