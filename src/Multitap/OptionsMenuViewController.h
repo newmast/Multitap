@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AVFoundation/AVAudioSession.h>
+#import <AVFoundation/AVFoundation.h>
+#import "Multitap-Swift.h"
 #import "OptionsItemView.h"
 
 @interface OptionsMenuViewController : UIViewController

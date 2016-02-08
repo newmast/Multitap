@@ -9,6 +9,10 @@
 #import "FinishedGameViewController.h"
 
 @implementation FinishedGameViewController
+{
+    CLLocationManager *locationManager;
+    NSString *_username;
+}
 
 @synthesize currentScore = _currentScore;
 
@@ -41,7 +45,18 @@
     }];
     
     [self.scoreLabel setText:[NSString stringWithFormat: @"Score: %ld", self.currentScore]];
-
+    
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers;
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+    {
+        [locationManager requestWhenInUseAuthorization];
+    }
+    
+    
     LocalHighscore *sqlScore = [LocalHighscore new];
     [sqlScore setScore: _currentScore];
     [sqlScore save];
@@ -50,20 +65,23 @@
         if([data isKindOfClass:[NSArray class]]){
             NSArray *list = data;
             
-            long maxScore = ((LocalHighscore*)list[0]).score;
-            for (LocalHighscore *score in list)
-            {
-                if (score.score > maxScore)
+            BOOL shouldBeHidden = YES;
+            if ([list count] > 0) {
+                long maxScore = ((LocalHighscore*)list[0]).score;
+                for (LocalHighscore *score in list)
                 {
-                    maxScore = score.score;
+                    if (score.score > maxScore)
+                    {
+                        maxScore = score.score;
+                    }
+                }
+                
+                shouldBeHidden = NO;
+                if (maxScore < _currentScore) { // TODO: EDIT
+                    shouldBeHidden = YES;
                 }
             }
             
-            BOOL shouldBeHidden = NO;
-            if (maxScore < _currentScore) {
-                shouldBeHidden = YES;
-            }
-
             self.beatRecordStackView.hidden = shouldBeHidden;
             
             if (!shouldBeHidden)
@@ -85,25 +103,86 @@
     }];
 }
 
--(void)shareResultOnline {
-    LocationManager *manager = [[LocationManager alloc] init];
-    NSLog(@"1");
-    [manager fetchWithCompletion:^(CLLocation * location, NSError * error) {
-        NSLog(@"2");
-        CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
-        [geocoder reverseGeocodeLocation:location
-                       completionHandler:^(NSArray *placemarks, NSError *error) {
-                           if (error){
-                               NSLog(@"Geocode failed with error: %@", error);
-                               return;
-                           }
-                           
-                           CLPlacemark *placemark = [placemarks objectAtIndex:0];
-                           NSLog(@"placemark.country %@",placemark.country);
-                           
-                       }];
+- (void)locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation {
+    [locationManager stopUpdatingLocation];
+    
+    CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
+    [geoCoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        CLPlacemark *placemark = placemarks[0];
+        NSString *country = placemark.country;
         
+        GlobalHighscore *highscore = [GlobalHighscore object];
+        NSData *imageData = UIImagePNGRepresentation([self.victorySelfieImage image]);
+        PFFile *image = [PFFile fileWithData:imageData];
+        
+        [highscore setHighscore: _currentScore];
+        [highscore setPlayerName: _username];
+        [highscore setVictorySelfie: image];
+        [highscore setLocation:country];
+        
+        [highscore saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"SUCCESS"
+                                                                                     message:@"You shared your result successfully!"
+                                                                              preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK"
+                                                         style:UIAlertActionStyleDefault
+                                                       handler:^(UIAlertAction * _Nonnull action) {
+                [[self navigationController] popToRootViewControllerAnimated:YES];
+            }];
+            [alertController addAction:ok];
+            
+            [self presentViewController:alertController animated:YES completion:nil];
+        }];
     }];
+}
+
+-(void)shareResultOnline {
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Hello!"
+                                                                   message:@"How would you like to be remembered?"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action)
+    {
+        if (_username == nil) {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                                     message:@"Your name cannot be empty!"
+                                                                              preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK"
+                                                         style:UIAlertActionStyleDefault
+                                                       handler:^(UIAlertAction * _Nonnull action) {
+                                                       }];
+            [alertController addAction:ok];
+            
+            [self presentViewController:alertController animated:YES completion:nil];
+            return;
+        }
+        [locationManager startUpdatingLocation];
+    }];
+    
+    [alert addAction:defaultAction];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"What's your name?";
+        
+        [textField addTarget:self action:@selector(getText:) forControlEvents:UIControlEventEditingChanged];
+    }];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(void)getText:(UITextField *)theTextField {
+    if ([[theTextField text] length] == 0) {
+        _username = nil;
+        return;
+    }
+    
+    _username = [theTextField text];
 }
 
 -(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {

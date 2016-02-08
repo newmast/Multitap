@@ -7,21 +7,42 @@
 //
 
 #import "OptionsMenuViewController.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @implementation OptionsMenuViewController
+{
+    OptionsItemView *soundView;
+}
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBar.hidden = YES;
+    
+    UISwipeGestureRecognizer *swipeRecognizer =
+    [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe)];
+    
+    [swipeRecognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
+    self.view.userInteractionEnabled = YES;
+    [self.view addGestureRecognizer: swipeRecognizer];
+
     [self.titleLabel setText:@"Mom's house"];
     
-    OptionsItemView *soundView = [[OptionsItemView alloc] initWithFrame: CGRectMake(0, 0, 200, 200)];
+    soundView = [[OptionsItemView alloc] initWithFrame: CGRectMake(0, 0, 200, 200)];
     
     [soundView.titleLabel setText:@"Is it too loud?"];
+    
     float systemVolume = [[AVAudioSession sharedInstance] outputVolume];
     [soundView.optionSlider setValue:systemVolume];
+    [soundView.optionSlider addTarget:self action:@selector(changeVolume) forControlEvents:UIControlEventValueChanged];
+    
+    [self.stackView addArrangedSubview:soundView];
+}
 
-    [self.stackView addSubview:soundView];
+-(void)handleSwipe {
+    [self dismissViewControllerAnimated:true completion:nil];
+}
+
+-(void)changeVolume {
+    [[SoundManager sharedInstance] changeVolume: [NSNumber numberWithFloat:[[soundView optionSlider] value]]];
 }
 
 @end

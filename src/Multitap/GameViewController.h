@@ -12,6 +12,8 @@
 #import "FallingBlocksView.h"
 #import <QuartzCore/QuartzCore.h>
 #import "FinishedGameViewController.h"
+#import <AVFoundation/AVFoundation.h>
+#import "Multitap-Swift.h"
 
 @interface GameViewController : UIViewController
 

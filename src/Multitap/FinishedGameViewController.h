@@ -10,9 +10,10 @@
 #import "LocalHighscore.h"
 #import "MenuButtonView.h"
 #import "ContactsManager.h"
-#import "Multitap-Swift.h"
+#import <CoreLocation/CoreLocation.h>
+#import "GlobalHighscore.h"
 
-@interface FinishedGameViewController : UIViewController<UIScrollViewDelegate>
+@interface FinishedGameViewController : UIViewController<UIScrollViewDelegate, CLLocationManagerDelegate>
 
 @property (nonatomic) long currentScore;
 @property (weak, nonatomic) IBOutlet UIStackView *parentStackView;

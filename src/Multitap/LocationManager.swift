@@ -55,13 +55,13 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     //ask for location permissions, fetch 1 location, and return
-    func fetchWithCompletion(completion: LocationClosure) {
+    func fetchWithCompletion(delegate: CLLocationManagerDelegate, completion: LocationClosure) {
         //store the completion closure
         didComplete = completion
         
         //fire the location manager
         locationManager = CLLocationManager()
-        locationManager!.delegate = self
+        locationManager!.delegate = delegate
         locationManager!.requestAlwaysAuthorization()
     }
 }

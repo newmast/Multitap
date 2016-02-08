@@ -18,6 +18,8 @@
     long _currentlyPressedButtonId;
     float _changeMainColorInterval;
     NSTimeInterval _longPressTimer;
+    float _invulnerabilityTimeAfterChangeColor;
+    BOOL _isPlayerInvulnerableFromDefeat;
     
     NSTimer *spawnTimer;
     NSTimer *colorTimer;
@@ -27,6 +29,18 @@
     [super viewDidLoad];
     
     // Gestures
+    self.gameView.userInteractionEnabled = YES;
+    // Tap
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    
+    [self.gameView addGestureRecognizer:tapRecognizer];
+    
+    // Double tap
+    UITapGestureRecognizer *doubleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
+    [doubleTapRecognizer setNumberOfTapsRequired:2];
+    [self.gameView addGestureRecognizer:doubleTapRecognizer];
+    
+    // Long press
     UILongPressGestureRecognizer *longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
     
     longPressRecognizer.allowableMovement = 1000.0f;
@@ -49,6 +63,8 @@
     _transitionDuration = 7;
     _rowHeight = self.gameView.bounds.size.height / 8;
     _rowWidth = self.gameView.bounds.size.width;
+    _invulnerabilityTimeAfterChangeColor = 1.5;
+    _isPlayerInvulnerableFromDefeat = NO;
     
     float spawnInterval = _transitionDuration / (self.gameView.bounds.size.height + 2 * _rowHeight) * _rowHeight;
     _changeMainColorInterval = 10;
@@ -72,6 +88,18 @@
     });
 }
 
+-(void)handleTap: (UITapGestureRecognizer *)sender {
+    UIButton *block = [self getButtonAtLocation:[sender locationInView:self.gameView]];
+    [self updateGameState:block
+                 tapCount:1];
+}
+
+-(void)handleDoubleTap: (UITapGestureRecognizer *)sender {
+    UIButton *block = [self getButtonAtLocation:[sender locationInView:self.gameView]];
+    [self updateGameState:block
+                 tapCount:3];
+}
+
 -(void)handleLongPress: (UILongPressGestureRecognizer *)sender {
     if (sender.state == UIGestureRecognizerStateBegan)
     {
@@ -82,7 +110,7 @@
     {
         NSTimeInterval end = [[NSDate date] timeIntervalSince1970];
         
-        if (end - _longPressTimer < 0.5) {
+        if (end - _longPressTimer < 0.25) {
             return;
         }
         
@@ -98,6 +126,20 @@
 - (void)changeMainColor {
     self.topBarView.backgroundColor = [GameColors getRandomColor];
     
+    _isPlayerInvulnerableFromDefeat = YES;
+    
+    [CATransaction begin];
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
+    [animation setDuration: _invulnerabilityTimeAfterChangeColor];
+    animation.autoreverses = YES;
+    [animation setFromValue: [NSValue valueWithCGPoint: CGPointMake(self.pointsLabel.center.x - 10, self.pointsLabel.center.y)]];
+    [animation setToValue: [NSValue valueWithCGPoint: CGPointMake(self.pointsLabel.center.x + 10, self.pointsLabel.center.y)]];
+    [CATransaction setCompletionBlock:^{
+        _isPlayerInvulnerableFromDefeat = NO;
+    }];
+    [self.pointsLabel.layer addAnimation:animation forKey:@"position"];
+    [CATransaction commit];
+    
     [UIView animateWithDuration:_changeMainColorInterval animations:^{
         [self.progressView setProgress:1.0 animated:YES];
     } completion:^(BOOL finished) { }];
@@ -105,7 +147,7 @@
 
 - (void)updateGameState:(UIButton *)clickedView
                tapCount:(NSUInteger)tapCount {
-    
+        
     NSInteger currentPoints = [[self.pointsLabel text] integerValue];
     UIImage *img = nil;
     if (CGColorEqualToColor([clickedView backgroundColor].CGColor, [self.topBarView backgroundColor].CGColor))
@@ -139,13 +181,14 @@
     {
         [self performSegueWithIdentifier:@"finishGame" sender:self];
     }
-    dispatch_async(dispatch_get_main_queue(), ^{
+
+    dispatch_async(dispatch_get_main_queue(),^{
         if (img != nil)
         {
             [clickedView setImage:img forState:UIControlStateNormal];
             [clickedView.imageView setAccessibilityIdentifier:@"broken_glass"];
         }
-    
+        
         self.pointsLabel.text = [NSString stringWithFormat:@"%ld", currentPoints];
     });
 }
@@ -169,17 +212,6 @@
     }
     
     return nil;
-}
-
-- (void)touchesEnded:(NSSet *)touches
-           withEvent:(UIEvent *)event {
-    
-    UITouch *touch = [touches anyObject];
-    CGPoint touchLocation = [touch locationInView:self.gameView];
-    
-    UIButton *block = [self getButtonAtLocation:touchLocation];
-    [self updateGameState:block
-                 tapCount:[touch tapCount]];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -220,7 +252,10 @@
                                 if (![[buttonView.imageView accessibilityIdentifier] isEqualToString:@"broken_glass"] &&
                                     CGColorEqualToColor([buttonView backgroundColor].CGColor, [self.topBarView backgroundColor].CGColor))
                                 {
-                                    [self performSegueWithIdentifier:@"finishGame" sender:self];
+                                    if (!_isPlayerInvulnerableFromDefeat)
+                                    {
+                                       [self performSegueWithIdentifier:@"finishGame" sender:self];
+                                    }
                                 }
                             }
                             [row removeFromSuperview];

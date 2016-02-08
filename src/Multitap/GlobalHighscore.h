@@ -11,10 +11,10 @@
 
 @interface GlobalHighscore : PFObject<PFSubclassing>
 
-@property(nonatomic) int highscore;
+@property(nonatomic) long highscore;
 @property(strong, nonatomic) NSString *playerName;
 @property(strong, nonatomic) NSString *location;
-@property(strong, nonatomic) UIImage *victorySelfie;
+@property(strong, nonatomic) PFFile *victorySelfie;
 
 +(NSString *) parseClassName;
 

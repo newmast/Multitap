@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MenuButtonView.h"
+#import "Multitap-Swift.h"
 
 @interface MainMenuViewController : UIViewController
 

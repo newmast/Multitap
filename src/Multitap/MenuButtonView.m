@@ -26,11 +26,11 @@
     float lineWidth = 4.0;
     
     CGContextSetLineWidth(context, lineWidth);
-    CGContextSetStrokeColorWithColor(context, [GameColors getRandomColor].CGColor);
+    //CGContextSetStrokeColorWithColor(context, [GameColors getRandomColor].CGColor);
     CGContextSetFillColorWithColor(context, [GameColors getRandomColor].CGColor);
-    CGRect rectange = CGRectMake(rect.origin.x + lineWidth / 2, rect.origin.y + lineWidth / 2, rect.size.width - lineWidth, rect.size.height - lineWidth);
+    //CGRect rectange = CGRectMake(rect.origin.x + lineWidth / 2, rect.origin.y + lineWidth / 2, rect.size.width - lineWidth, rect.size.height - lineWidth);
     CGContextFillEllipseInRect(context, rect);
-    CGContextAddEllipseInRect(context, rectange);
+    //CGContextAddEllipseInRect(context, rectange);
     CGContextStrokePath(context);
 }
 
