@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3300CD611C655E38009C5E35 /* OptionsMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3300CD601C655E38009C5E35 /* OptionsMenuViewController.m */; };
 		3300CD641C656DEE009C5E35 /* FinishedGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3300CD631C656DEE009C5E35 /* FinishedGameViewController.m */; };
-		3300D1B71C686D4F001DB35A /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3300D1B61C686D4F001DB35A /* backgroundMusic.mp3 */; };
 		3310318E1C68198B006FEAC8 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3310318D1C68198B006FEAC8 /* SoundManager.swift */; };
 		3311349B1C63E93600003A68 /* GlobalHighscore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3311349A1C63E93600003A68 /* GlobalHighscore.m */; };
 		334777971C60EB51007B2894 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 334777961C60EB51007B2894 /* main.m */; };
@@ -29,6 +28,7 @@
 		33E8C64E1C661C2A00B3E5F1 /* OptionsItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33E8C64D1C661C2A00B3E5F1 /* OptionsItemView.xib */; };
 		33E8C6511C661D2D00B3E5F1 /* OptionsItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E8C6501C661D2D00B3E5F1 /* OptionsItemView.m */; };
 		33E8C6551C66A61A00B3E5F1 /* ContactsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E8C6541C66A61A00B3E5F1 /* ContactsManager.m */; };
+		33F779401C6A3AF700E263E4 /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 33F7793F1C6A3AF700E263E4 /* backgroundMusic.mp3 */; };
 		6D5377AF7A593798DEE4C264 /* Pods_Multitap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA41720D372336EC5B904D21 /* Pods_Multitap.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +54,6 @@
 		3300CD601C655E38009C5E35 /* OptionsMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsMenuViewController.m; sourceTree = "<group>"; };
 		3300CD621C656DEE009C5E35 /* FinishedGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishedGameViewController.h; sourceTree = "<group>"; };
 		3300CD631C656DEE009C5E35 /* FinishedGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishedGameViewController.m; sourceTree = "<group>"; };
-		3300D1B61C686D4F001DB35A /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = backgroundMusic.mp3; path = ../../../../../Downloads/backgroundMusic.mp3; sourceTree = "<group>"; };
 		3310318D1C68198B006FEAC8 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		331134991C63E93600003A68 /* GlobalHighscore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalHighscore.h; sourceTree = "<group>"; };
 		3311349A1C63E93600003A68 /* GlobalHighscore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalHighscore.m; sourceTree = "<group>"; };
@@ -90,6 +89,7 @@
 		33E8C6501C661D2D00B3E5F1 /* OptionsItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsItemView.m; sourceTree = "<group>"; };
 		33E8C6531C66A61A00B3E5F1 /* ContactsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsManager.h; sourceTree = "<group>"; };
 		33E8C6541C66A61A00B3E5F1 /* ContactsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsManager.m; sourceTree = "<group>"; };
+		33F7793F1C6A3AF700E263E4 /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
 		6C370903F8F25FC5F03B25E2 /* Pods-Multitap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multitap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Multitap/Pods-Multitap.debug.xcconfig"; sourceTree = "<group>"; };
 		85A5A434FFA3A22E6FBCFEAE /* Pods-Multitap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multitap.release.xcconfig"; path = "Pods/Target Support Files/Pods-Multitap/Pods-Multitap.release.xcconfig"; sourceTree = "<group>"; };
 		BA41720D372336EC5B904D21 /* Pods_Multitap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Multitap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -253,7 +253,7 @@
 		33869A8D1C682C4D0036BCC1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3300D1B61C686D4F001DB35A /* backgroundMusic.mp3 */,
+				33F7793F1C6A3AF700E263E4 /* backgroundMusic.mp3 */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -383,8 +383,8 @@
 			files = (
 				334777A51C60EB52007B2894 /* LaunchScreen.storyboard in Resources */,
 				334777A21C60EB52007B2894 /* Assets.xcassets in Resources */,
-				3300D1B71C686D4F001DB35A /* backgroundMusic.mp3 in Resources */,
 				33E8C64E1C661C2A00B3E5F1 /* OptionsItemView.xib in Resources */,
+				33F779401C6A3AF700E263E4 /* backgroundMusic.mp3 in Resources */,
 				334777A01C60EB52007B2894 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
